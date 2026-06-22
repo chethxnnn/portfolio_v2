@@ -16,6 +16,7 @@ const socialLinksSchema = new mongoose.Schema({
 
 const aboutSchema = new mongoose.Schema({
   bio: { type: String },
+  story: { type: [String], default: [] },
   photoUrl: { type: String },
   resumeUrl: { type: String },
   education: [educationSchema],

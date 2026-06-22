@@ -7,6 +7,7 @@ const AboutPanel = () => {
 
   const [formData, setFormData] = useState({
     bio: '',
+    story: '',
     photoUrl: '',
     resumeUrl: '',
     socialLinks: {
@@ -25,6 +26,7 @@ const AboutPanel = () => {
           const about = res.data[0];
           setFormData({
             bio: about.bio || '',
+            story: Array.isArray(about.story) ? about.story.join('\n\n') : '',
             photoUrl: about.photoUrl || '',
             resumeUrl: about.resumeUrl || '',
             socialLinks: {
@@ -47,7 +49,11 @@ const AboutPanel = () => {
   const handleSave = async () => {
     setSaving(true);
     try {
-      await api.put('/about', formData);
+      const payload = {
+        ...formData,
+        story: formData.story.split('\n\n').map(p => p.trim()).filter(p => p.length > 0)
+      };
+      await api.put('/about', payload);
       alert('About section updated successfully!');
     } catch (err) {
       alert('Failed to update About section');
@@ -95,6 +101,16 @@ const AboutPanel = () => {
               value={formData.bio}
               onChange={(e) => setFormData({...formData, bio: e.target.value})}
               placeholder="e.g. Currently pursuing my undergraduate degree..."
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm text-muted mb-1 font-mono">The Story (Double 'Enter' to separate paragraphs)</label>
+            <textarea 
+              className="w-full bg-card border border-border rounded-8px px-4 py-2 text-primary focus:outline-none focus:border-accent min-h-[250px]"
+              value={formData.story}
+              onChange={(e) => setFormData({...formData, story: e.target.value})}
+              placeholder="Your full story here..."
             />
           </div>
 

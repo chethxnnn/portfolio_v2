@@ -155,8 +155,8 @@ const ProjectsPanel = () => {
                   </span>
                 </td>
                 <td className="p-4 text-right">
-                  <button onClick={() => handleOpenEdit(p)} className="text-muted hover:text-accent p-2"><Edit2 size={16} /></button>
-                  <button onClick={() => handleOpenDelete(p)} className="text-muted hover:text-danger p-2 ml-2"><Trash2 size={16} /></button>
+                  <button onClick={() => handleOpenEdit(p)} className="text-blue-500 bg-blue-500/10 hover:bg-blue-500/20 p-2 rounded-md transition-colors"><Edit2 size={16} /></button>
+                  <button onClick={() => handleOpenDelete(p)} className="text-red-500 bg-red-500/10 hover:bg-red-500/20 p-2 ml-2 rounded-md transition-colors"><Trash2 size={16} /></button>
                 </td>
               </tr>
             ))}
