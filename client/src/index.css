@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #000000;
+    --bg-secondary: #0A0A0A;
+    --text-primary: #FFFFFF;
+    --text-muted: #666666;
+    --accent: #FFFFFF;
+    --accent-hover: #CCCCCC;
+    --success: #FFFFFF;
+    --danger: #999999;
+    --card-bg: #111111;
+    --border: #222222;
+  }
+
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .text-display {
+    @apply font-display font-bold tracking-tight;
+  }
+  
+  .fade-in-content {
+    animation: fadeIn 1s ease-in forwards;
+  }
+
+  .text-white { color: var(--theme-white, #ffffff) !important; }
+  .bg-white { background-color: var(--theme-white, #ffffff) !important; }
+  .border-white { border-color: var(--theme-white, #ffffff) !important; }
+  .hover\:text-white:hover { color: var(--theme-white, #ffffff) !important; }
+  .hover\:bg-white:hover { background-color: var(--theme-white, #ffffff) !important; }
+  .hover\:border-white:hover { border-color: var(--theme-white, #ffffff) !important; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
