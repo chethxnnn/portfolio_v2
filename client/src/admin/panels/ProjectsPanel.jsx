@@ -26,7 +26,8 @@ const ProjectsPanel = () => {
     status: 'Completed',
     projectType: 'Personal',
     featured: false,
-    order: 0
+    order: 0,
+    imageUrl: ''
   });
 
   const fetchProjects = async () => {
@@ -54,7 +55,8 @@ const ProjectsPanel = () => {
       status: 'Completed',
       projectType: 'Personal',
       featured: false,
-      order: 0
+      order: 0,
+      imageUrl: ''
     });
     setIsModalOpen(true);
   };
@@ -71,7 +73,8 @@ const ProjectsPanel = () => {
       status: item.status || 'Completed',
       projectType: item.projectType || 'Personal',
       featured: item.featured || false,
-      order: item.order || 0
+      order: item.order || 0,
+      imageUrl: (item.images && item.images.length > 0) ? item.images[0] : ''
     });
     setIsModalOpen(true);
   };
@@ -85,7 +88,8 @@ const ProjectsPanel = () => {
     try {
       const payload = {
         ...formData,
-        techStack: formData.techStack.split(',').map(s => s.trim()).filter(s => s)
+        techStack: formData.techStack.split(',').map(s => s.trim()).filter(s => s),
+        images: formData.imageUrl ? [formData.imageUrl] : []
       };
       
       if (currentEdit) {
@@ -177,6 +181,16 @@ const ProjectsPanel = () => {
               className="w-full bg-card border border-border rounded-8px px-4 py-2 text-primary focus:outline-none focus:border-accent"
               value={formData.title}
               onChange={(e) => setFormData({...formData, title: e.target.value})}
+            />
+          </div>
+          <div>
+            <label className="block text-sm text-muted mb-1 font-mono">Image URL (Cloudinary/Imgur link)</label>
+            <input 
+              type="text" 
+              className="w-full bg-card border border-border rounded-8px px-4 py-2 text-primary focus:outline-none focus:border-accent"
+              value={formData.imageUrl}
+              onChange={(e) => setFormData({...formData, imageUrl: e.target.value})}
+              placeholder="https://..."
             />
           </div>
           <div>
