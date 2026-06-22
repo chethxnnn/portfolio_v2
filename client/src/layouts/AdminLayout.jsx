@@ -22,6 +22,7 @@ const AdminLayout = () => {
     { name: 'Hobbies', path: '/admin/hobbies', icon: Lightbulb },
     { name: 'Media Accounts', path: '/admin/media', icon: Camera },
     { name: 'Skills', path: '/admin/skills', icon: Lightbulb },
+    { name: 'Resume', path: '/admin/resume', icon: Folder },
     { name: 'About', path: '/admin/about', icon: User },
     { name: 'Settings', path: '/admin/settings', icon: Settings },
   ];

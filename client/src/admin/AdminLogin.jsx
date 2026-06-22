@@ -40,7 +40,7 @@ const AdminLogin = () => {
               onChange={e => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit" className="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-4px font-bold tracking-wider transition-colors mt-4">
+          <button type="submit" className="w-full bg-accent hover:bg-accent-hover text-black py-3 rounded-4px font-bold tracking-wider transition-colors mt-4">
             INITIATE
           </button>
         </form>

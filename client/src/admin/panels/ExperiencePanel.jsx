@@ -108,7 +108,7 @@ const ExperiencePanel = () => {
         <h1 className="text-display text-3xl">Experience</h1>
         <button 
           onClick={handleOpenAdd}
-          className="bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded-8px flex items-center gap-2 transition-colors"
+          className="bg-accent hover:bg-accent-hover text-black px-4 py-2 rounded-8px flex items-center gap-2 transition-colors"
         >
           <Plus size={18} />
           New Experience
@@ -229,7 +229,7 @@ const ExperiencePanel = () => {
             </button>
             <button 
               onClick={handleSave}
-              className="px-4 py-2 bg-accent hover:bg-accent-hover rounded-8px text-white transition-colors"
+              className="px-4 py-2 bg-accent hover:bg-accent-hover rounded-8px text-black font-medium transition-colors"
             >
               Save Changes
             </button>

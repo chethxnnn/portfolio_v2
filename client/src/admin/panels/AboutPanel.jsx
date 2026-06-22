@@ -76,7 +76,7 @@ const AboutPanel = () => {
         <button 
           onClick={handleSave}
           disabled={saving}
-          className="bg-accent hover:bg-accent-hover text-white px-6 py-2 rounded-8px transition-colors disabled:opacity-50"
+          className="bg-accent hover:bg-accent-hover text-black px-6 py-2 rounded-8px transition-colors disabled:opacity-50"
         >
           {saving ? 'Saving...' : 'Save Changes'}
         </button>

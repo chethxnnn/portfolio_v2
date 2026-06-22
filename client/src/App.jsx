@@ -10,6 +10,7 @@ import MediaPanel from './admin/panels/MediaPanel';
 import ExperiencePanel from './admin/panels/ExperiencePanel';
 import SkillsPanel from './admin/panels/SkillsPanel';
 import AboutPanel from './admin/panels/AboutPanel';
+import ResumePanel from './admin/panels/ResumePanel';
 import SettingsPanel from './admin/panels/SettingsPanel';
 // Public pages
 import Home from './pages/Home';
@@ -33,6 +34,7 @@ function App() {
           <Route path="media" element={<MediaPanel />} />
           <Route path="experience" element={<ExperiencePanel />} />
           <Route path="skills" element={<SkillsPanel />} />
+          <Route path="resume" element={<ResumePanel />} />
           <Route path="about" element={<AboutPanel />} />
           <Route path="settings" element={<SettingsPanel />} />
         </Route>
