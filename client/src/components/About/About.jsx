@@ -54,6 +54,25 @@ const About = ({ data }) => {
           </p>
           
 
+          {data.resumeUrl && (
+            <div className="flex justify-center md:justify-end mt-12">
+              <a 
+                href={data.resumeUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center px-8 py-4 font-mono font-bold text-black bg-white rounded-full overflow-hidden transition-transform hover:scale-105"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  View Resume
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left z-0"></div>
+              </a>
+            </div>
+          )}
+
         </motion.div>
       </div>
     </section>
