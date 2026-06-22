@@ -116,7 +116,7 @@ const ProjectsPanel = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <h1 className="text-display text-3xl">Projects</h1>
         <button 
           onClick={handleOpenAdd}
@@ -128,7 +128,7 @@ const ProjectsPanel = () => {
       </div>
 
       <div className="bg-surface rounded-12px border border-border overflow-hidden">
-        <table className="w-full text-left">
+        <div className="overflow-x-auto"><table className="w-full text-left">
           <thead className="bg-card border-b border-border text-muted font-mono text-sm">
             <tr>
               <th className="p-4 font-normal">Title</th>
@@ -161,7 +161,7 @@ const ProjectsPanel = () => {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table></div>
       </div>
 
       <AdminModal 

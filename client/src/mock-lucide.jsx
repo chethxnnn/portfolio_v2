@@ -22,3 +22,4 @@ export const Flag = MockIcon;
 export const X = MockIcon;
 export const AlertTriangle = MockIcon;
 export const Save = MockIcon;
+export const Menu = MockIcon;

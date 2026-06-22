@@ -36,7 +36,7 @@ const ResumePanel = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <h1 className="text-display text-3xl">Resume</h1>
         <button 
           onClick={handleSave}
