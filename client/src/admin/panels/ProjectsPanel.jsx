@@ -184,7 +184,17 @@ const ProjectsPanel = () => {
             />
           </div>
           <div>
-            <label className="block text-sm text-muted mb-1 font-mono">Image URL (Cloudinary/Imgur link)</label>
+            <div className="flex justify-between items-center mb-1">
+              <label className="block text-sm text-muted font-mono">Image URL (Cloudinary/Imgur link)</label>
+              <a 
+                href="https://postimages.org/" 
+                target="_blank" 
+                rel="noreferrer"
+                className="text-xs text-blue-500 hover:text-blue-400 underline decoration-blue-500/30 hover:decoration-blue-400 transition-colors flex items-center gap-1"
+              >
+                Upload Image Here
+              </a>
+            </div>
             <input 
               type="text" 
               className="w-full bg-card border border-border rounded-8px px-4 py-2 text-primary focus:outline-none focus:border-accent"
