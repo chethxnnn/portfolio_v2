@@ -34,7 +34,7 @@ const AdminLayout = () => {
       
       {/* Mobile Top Bar */}
       <div className="md:hidden absolute top-0 left-0 right-0 h-16 bg-surface border-b border-border flex items-center justify-between px-4 z-40">
-        <h2 className="text-display text-accent tracking-widest text-lg uppercase">CMS</h2>
+        <h2 className="text-display text-accent tracking-widest text-lg uppercase">Edit Studio</h2>
         <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-primary p-2">
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -54,7 +54,7 @@ const AdminLayout = () => {
         ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
       `}>
         <div className="p-6 border-b border-border hidden md:block">
-          <h2 className="text-display text-accent tracking-widest text-xl uppercase">CMS</h2>
+          <h2 className="text-display text-accent tracking-widest text-xl uppercase">Edit Studio</h2>
         </div>
         
         <nav className="flex-1 overflow-y-auto py-4 mt-16 md:mt-0">
