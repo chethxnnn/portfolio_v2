@@ -139,26 +139,30 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [settings, about, projects, skills, experience, education, hobbies, media] = await Promise.all([
-          axios.get('http://localhost:5000/api/settings'),
-          axios.get('http://localhost:5000/api/about'),
-          axios.get('http://localhost:5000/api/projects'),
-          axios.get('http://localhost:5000/api/skills'),
-          axios.get('http://localhost:5000/api/experience'),
-          axios.get('http://localhost:5000/api/education'),
-          axios.get('http://localhost:5000/api/hobbies'),
-          axios.get('http://localhost:5000/api/media')
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+        const [
+          settingsRes, aboutRes, projectsRes, skillsRes, 
+          experienceRes, educationRes, hobbiesRes, mediaRes
+        ] = await Promise.all([
+          axios.get(`${API_URL}/settings`),
+          axios.get(`${API_URL}/about`),
+          axios.get(`${API_URL}/projects`),
+          axios.get(`${API_URL}/skills`),
+          axios.get(`${API_URL}/experience`),
+          axios.get(`${API_URL}/education`),
+          axios.get(`${API_URL}/hobbies`),
+          axios.get(`${API_URL}/media`)
         ]);
 
         setData({
-          settings: settings.data,
-          about: about.data,
-          projects: projects.data,
-          skills: skills.data,
-          experience: experience.data,
-          education: education.data,
-          hobbies: hobbies.data,
-          media: media.data
+          settings: settingsRes.data,
+          about: aboutRes.data,
+          projects: projectsRes.data,
+          skills: skillsRes.data,
+          experience: experienceRes.data,
+          education: educationRes.data,
+          hobbies: hobbiesRes.data,
+          media: mediaRes.data
         });
       } catch (err) {
         console.error("Failed to fetch data", err);

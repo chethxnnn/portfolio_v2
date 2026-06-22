@@ -8,7 +8,8 @@ const AdminLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('http://localhost:5000/api/auth/login', { username, password });
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      const { data } = await axios.post(`${API_URL}/auth/login`, { username, password });
       localStorage.setItem('adminToken', data.token);
       window.location.href = '/admin';
     } catch (err) {
