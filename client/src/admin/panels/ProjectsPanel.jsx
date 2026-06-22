@@ -185,7 +185,7 @@ const ProjectsPanel = () => {
           </div>
           <div>
             <div className="flex justify-between items-center mb-1">
-              <label className="block text-sm text-muted font-mono">Image URL (Cloudinary/Imgur link)</label>
+              <label className="block text-sm text-muted font-mono">Image URL (postimages.org link)</label>
               <a 
                 href="https://postimages.org/" 
                 target="_blank" 
