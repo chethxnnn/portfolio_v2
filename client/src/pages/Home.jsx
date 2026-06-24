@@ -30,7 +30,7 @@ const getProfMessages = () => {
     { text: `> connection established via ${netInfo}`, delay: 1500 },
     { text: "> extracting data from chethan's brain...", delay: 2500 },
     { text: "> collecting his data from school, college reports...", delay: 2500 },
-    { text: "> checking where he is current working...", delay: 2500 },
+    { text: "> checking where he is currently working...", delay: 2500 },
     { text: "> system ready", delay: 1000 }
   ];
 };
