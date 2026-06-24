@@ -78,7 +78,7 @@ const AgeCounter = () => {
   );
 };
 
-const ProgressiveNav = () => {
+const ProgressiveNav = ({ resumeUrl }) => {
   const { pinnedSections, setPinnedSections, viewMode, setViewMode } = useNav();
   const prevVisibleRef = useRef([]);
 
@@ -170,7 +170,7 @@ const ProgressiveNav = () => {
             <AgeCounter />
           </div>
           <a
-            href="/Chethan_P_Resume.pdf"
+            href={resumeUrl || "/Chethan_P_Resume.pdf"}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:block mt-4 px-4 py-2 bg-white text-black font-mono text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#dddddd] transition-colors rounded-sm shadow-md"
@@ -198,7 +198,7 @@ const ProgressiveNav = () => {
                     animate={{ width: 'auto', opacity: 1 }}
                     exit={{ width: 0, opacity: 0 }}
                     transition={{ duration: 0.2 }}
-                    href="/Chethan_P_Resume.pdf"
+                    href={resumeUrl || "/Chethan_P_Resume.pdf"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="pr-3 font-mono text-[9px] font-bold tracking-[0.2em] uppercase whitespace-nowrap overflow-hidden flex items-center"

@@ -63,7 +63,7 @@ const MainContent = ({ data }) => {
 
   return (
     <>
-      <ProgressiveNav />
+      <ProgressiveNav resumeUrl={data.about?.resumeUrl} />
       
       {activeBoot === 'media' && (
         <BootSequence 
